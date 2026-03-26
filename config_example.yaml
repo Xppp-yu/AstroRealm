@@ -1,0 +1,311 @@
+# AstroRealm 配置文件示例
+# 这是一个真实的学生项目配置，包含我的实际需求
+
+# ====================
+# 学生基本信息
+# ====================
+student:
+  name: "谢鹏程"
+  school: "长安大学"
+  major: "道路桥梁与渡河工程"
+  grade: "大二"
+  student_id: "2024xxxxxx"
+  
+  # 学习习惯配置
+  study_habits:
+    preferred_study_time: "晚上"  # 早上/下午/晚上
+    study_session_length: 50      # 单次学习时长（分钟）
+    break_length: 10              # 休息时长（分钟）
+    daily_goal: 4                 # 每日目标学习时长（小时）
+
+# ====================
+# 课程表配置
+# ====================
+course_schedule:
+  semester: "2026春季学期"
+  courses:
+    - name: "土力学"
+      day: "周一"
+      time: "08:00-10:00"
+      location: "教学楼A101"
+      importance: "高"
+      
+    - name: "结构力学"
+      day: "周三"
+      time: "10:00-12:00"
+      location: "教学楼B201"
+      importance: "高"
+      
+    - name: "工程制图"
+      day: "周二"
+      time: "14:00-16:00"
+      location: "制图室301"
+      importance: "中"
+      
+    - name: "大学英语"
+      day: "周四"
+      time: "08:00-10:00"
+      location: "外语楼102"
+      importance: "中"
+      
+    - name: "高等数学"
+      day: "周五"
+      time: "10:00-12:00"
+      location: "教学楼C301"
+      importance: "高"
+
+# ====================
+# 系统基础配置
+# ====================
+system:
+  # 运行模式
+  mode: "development"  # development / production
+  
+  # 日志配置
+  logging:
+    level: "INFO"
+    file: "/home/astro/logs/astrorealm.log"
+    max_size: "10MB"   # 单个日志文件最大大小
+    backup_count: 5    # 保留的日志文件数量
+    
+  # 性能配置
+  performance:
+    max_concurrent_tasks: 3      # 最大并发任务数
+    task_timeout: 300            # 任务超时时间（秒）
+    memory_limit: "512MB"        # 内存限制
+    cpu_limit: 1.0               # CPU限制（核心数）
+
+# ====================
+# 本地配置
+# ====================
+local:
+  # 数据存储路径
+  storage:
+    data_dir: "/home/astro/data"
+    backup_dir: "/home/astro/backup"
+    temp_dir: "/tmp/astro"
+    
+  # 安全配置
+  security:
+    enable_encryption: true
+    sensitive_keywords: ["密码", "密钥", "token", "private", "secret"]
+    auto_clean_temp: true        # 自动清理临时文件
+    clean_interval: 3600         # 清理间隔（秒）
+    
+  # 资源监控
+  monitoring:
+    check_interval: 60           # 检查间隔（秒）
+    cpu_threshold: 80            # CPU使用率阈值（%）
+    memory_threshold: 85         # 内存使用率阈值（%）
+    disk_threshold: 90           # 磁盘使用率阈值（%）
+
+# ====================
+# 云端配置
+# ====================
+cloud:
+  # 连接配置
+  connection:
+    enabled: true
+    server_url: "https://cloud.astrorealm.example.com"
+    api_key: "${CLOUD_API_KEY}"  # 从环境变量读取
+    timeout: 30                  # 连接超时（秒）
+    retry_count: 3               # 重试次数
+    
+  # 任务配置
+  tasks:
+    max_cloud_tasks: 5           # 最大云端任务数
+    auto_upload: true            # 自动上传非敏感任务
+    cost_limit: 10.0             # 月度成本限制（元）
+    
+  # 安全配置
+  security:
+    enable_cleanup: true         # 启用自动清理
+    cleanup_delay: 300           # 清理延迟（秒）
+    no_persistent_data: true     # 不持久化数据
+
+# ====================
+# AI模型配置
+# ====================
+ai_models:
+  # 默认模型
+  default: "deepseek"
+  
+  # 模型列表
+  models:
+    - name: "deepseek"
+      provider: "deepseek"
+      api_key: "${DEEPSEEK_API_KEY}"
+      endpoint: "https://api.deepseek.com"
+      max_tokens: 4096
+      temperature: 0.7
+      
+    - name: "claude"
+      provider: "anthropic"
+      api_key: "${CLAUDE_API_KEY}"
+      endpoint: "https://api.anthropic.com"
+      max_tokens: 4096
+      temperature: 0.7
+      
+    - name: "local"
+      provider: "ollama"
+      endpoint: "http://localhost:11434"
+      model: "qwen2.5:7b"
+      context_window: 8192
+
+# ====================
+# 任务调度配置
+# ====================
+scheduler:
+  # 任务分类规则
+  classification:
+    local_only:
+      keywords: ["密码", "密钥", "隐私", "成绩", "考试"]
+      description: "涉及隐私和敏感信息的任务"
+      
+    cloud_preferred:
+      keywords: ["计算", "训练", "批量", "处理", "分析"]
+      description: "计算密集型任务"
+      
+    local_preferred:
+      keywords: ["学习", "笔记", "整理", "阅读", "写作"]
+      description: "学习相关任务"
+      
+  # 优先级配置
+  priorities:
+    P0:
+      name: "紧急"
+      description: "需要立即处理的任务"
+      examples: ["提醒", "警报", "紧急"]
+      max_wait_time: 60          # 最大等待时间（秒）
+      
+    P1:
+      name: "重要"
+      description: "需要尽快处理的任务"
+      examples: ["作业", "课设", "项目"]
+      max_wait_time: 3600        # 最大等待时间（秒）
+      
+    P2:
+      name: "普通"
+      description: "可以稍后处理的任务"
+      examples: ["整理", "归档", "学习"]
+      max_wait_time: 86400       # 最大等待时间（秒）
+
+# ====================
+# 学习相关配置
+# ====================
+learning:
+  # 知识库配置
+  knowledge_base:
+    enabled: true
+    base_dir: "/home/astro/knowledge"
+    auto_index: true             # 自动建立索引
+    index_interval: 3600         # 索引更新间隔（秒）
+    
+    # 知识库结构
+    structure:
+      courses: "课程资料"
+      projects: "项目文档"
+      code: "代码片段"
+      notes: "学习笔记"
+      references: "参考文献"
+      
+  # 学习目标
+  goals:
+    daily:
+      - "完成当日作业"
+      - "复习昨日课程"
+      - "预习明日课程"
+      - "技术学习1小时"
+      
+    weekly:
+      - "完成所有作业"
+      - "整理本周笔记"
+      - "项目开发进展"
+      - "技术专题学习"
+      
+    monthly:
+      - "课程阶段复习"
+      - "项目里程碑完成"
+      - "技术能力提升"
+      - "学习计划调整"
+
+# ====================
+# 通知配置
+# ====================
+notifications:
+  # 飞书配置
+  feishu:
+    enabled: true
+    webhook_url: "${FEISHU_WEBHOOK}"
+    
+    # 通知类型
+    types:
+      task_completed: true       # 任务完成通知
+      system_alert: true         # 系统警报
+      study_reminder: true       # 学习提醒
+      daily_summary: true        # 每日总结
+      
+  # 邮件配置
+  email:
+    enabled: false
+    smtp_server: "smtp.example.com"
+    smtp_port: 587
+    username: "${EMAIL_USER}"
+    password: "${EMAIL_PASSWORD}"
+    from_address: "astrorealm@example.com"
+    to_address: "student@example.com"
+
+# ====================
+# 备份配置
+# ====================
+backup:
+  enabled: true
+  schedule: "0 2 * * *"          # 每天凌晨2点
+  retention_days: 30             # 保留30天
+  locations:
+    - type: "local"
+      path: "/home/astro/backups"
+      
+    - type: "cloud"
+      provider: "aliyun"
+      bucket: "astrorealm-backup"
+      region: "cn-hangzhou"
+
+# ====================
+# 开发配置
+# ====================
+development:
+  # 调试配置
+  debug:
+    enabled: true
+    log_level: "DEBUG"
+    profile_performance: false   # 性能分析
+    
+  # 测试配置
+  testing:
+    auto_run_tests: true         # 提交时自动运行测试
+    coverage_threshold: 80       # 测试覆盖率阈值（%）
+    
+  # 代码质量
+  code_quality:
+    enable_linting: true         # 启用代码检查
+    enable_formatting: true      # 启用代码格式化
+    pre_commit_hooks: true       # 启用pre-commit钩子
+
+# ====================
+# 环境变量说明
+# ====================
+# 需要设置的环境变量：
+# - CLOUD_API_KEY: 云端服务API密钥
+# - DEEPSEEK_API_KEY: DeepSeek API密钥
+# - CLAUDE_API_KEY: Claude API密钥
+# - FEISHU_WEBHOOK: 飞书Webhook地址
+# - EMAIL_USER: 邮箱用户名
+# - EMAIL_PASSWORD: 邮箱密码
+
+# ====================
+# 配置验证
+# ====================
+# 启动前请运行：python -m astrorealm.config.validate
+# 确保所有必需配置项都已正确设置
+
