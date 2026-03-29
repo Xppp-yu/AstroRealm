@@ -1,4 +1,31 @@
-# AstroRealm：我的数字孪生伙伴
+<img width="960" height="909" alt="image" src="https://github.com/user-attachments/assets/31fefb54-825c-43d1-9237-4f83688c64a4" /># AstroRealm：我的数字孪生伙伴
+
+## 🚀 当前阶段更新（2026-03-29）：Stable Core v0.1 重构启动
+
+经过最近的思考，我决定对 AstroRealm 进行一次**彻底换血**。
+
+**核心转变**：
+- 以前我是在依赖 ClaudeCode 的整个框架，再往上叠自己的逻辑 → 容易状态混乱、不稳定。
+- 现在我把系统重构为 **Stable Core + Infinite Skills** 架构。
+
+**Stable Core** 是极简、永不死亡的最小链路（接收任务 → 调用 Skill → 返回结果 → 记录日志 → 保证不死）。  
+**Infinite Skills** 是所有具体功能（包括 Claude 本身），全部做成可插拔的技能包。
+
+> **足够简单的核心 + 极其容易的插拔，造就了 AstroRealm 在各行业形成生态的可能。**
+
+**AstroRealm = Stable Core + Infinite Skills**
+
+这个转变让我感觉 v2.0（Obsidian 深度集成、专业模块等）突然近了很多——以后加功能不再是大改 Core，而是新增一个 Skill 即可。
+
+**每日 Core 生长记录**：`docs/daily-core-log/`（从今天开始记录）
+
+详细新架构说明请看：
+- `docs/daily-core-log/2026-03-29-core-v0.1.md`
+- `core/core_v0.1.py` + `skill_interface.py`
+
+**仓库结构已调整**为 Core / skills / docs 分层，方便未来协作和插件式扩展。
+
+（以下为历史记录，保留作为成长见证）
 
 > **一个道路桥梁与渡河工程专业大二学生的AI探索之旅**
 >
