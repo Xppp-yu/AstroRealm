@@ -1,4 +1,4 @@
-<img width="960" height="909" alt="image" src="https://github.com/user-attachments/assets/31fefb54-825c-43d1-9237-4f83688c64a4" /># AstroRealm：我的数字孪生伙伴
+# AstroRealm：我的数字孪生伙伴
 
 ## 🚀 当前阶段更新（2026-03-29）：Stable Core v0.1 重构启动
 
