@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-04-12",
+  "apis": {
+    "glm-5": {
+      "provider": "zhipu",
+      "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+      "systemPromptFormat": "anthropic",
+      "maxContextTokens": 128000,
+      "supportsSystemPrompt": true,
+      "notes": "当前使用的主要 API"
+    },
+    "glm-coding-plan": {
+      "provider": "zhipu",
+      "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+      "systemPromptFormat": "anthropic",
+      "maxContextTokens": 128000,
+      "supportsSystemPrompt": true,
+      "notes": "GLM Coding Plan，同厂商，风格相近"
+    },
+    "minimax": {
+      "provider": "minimax",
+      "baseUrl": "待配置",
+      "systemPromptFormat": "unknown",
+      "maxContextTokens": "未知",
+      "supportsSystemPrompt": "未知",
+      "notes": "需要验证系统提示传递"
+    }
+  },
+  "hooks": {
+    "sessionStart": "./hooks/session-start.sh",
+    "sessionEnd": "./hooks/session-end.sh",
+    "iterate": "./hooks/iterate.sh"
+  },
+  "sync": {
+    "claudeStudio": "E:/ClaudeStudio/projects/memory-system",
+    "coBrain": "E:/CoBrain/03-Concepts/动态记忆系统.md",
+    "memoryFiles": "C:/Users/23939/.claude/projects/C--Users-23939/memory"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "projectName": "memory-system",
+  "version": "1.0.0",
+  "created": "2026-04-12",
+  "description": "跨模型动态记忆系统",
+  "repository": {
+    "local": "E:/ClaudeStudio/projects/memory-system",
+    "github": "待创建"
+  },
+  "components": {
+    "persona": {
+      "base": "persona/base.md",
+      "preferences": "persona/preferences.md",
+      "lessons": "persona/lessons/",
+      "versions": "persona/versions/"
+    },
+    "collaboration": {
+      "patterns": "collaboration/patterns.md",
+      "workflows": "collaboration/workflows/",
+      "commands": "collaboration/commands/"
+    },
+    "feedback": {
+      "pending": "feedback/pending.md",
+      "collected": "feedback/collected/",
+      "processed": "feedback/processed/"
+    },
+    "hooks": {
+      "sessionStart": "hooks/session-start.sh",
+      "sessionEnd": "hooks/session-end.sh",
+      "iterate": "hooks/iterate.sh"
+    }
+  },
+  "sync": {
+    "coBrain": {
+      "enabled": true,
+      "target": "E:/CoBrain/03-Concepts/动态记忆系统.md",
+      "type": "knowledge-record"
+    },
+    "memoryFiles": {
+      "enabled": true,
+      "target": "C:/Users/23939/.claude/projects/C--Users-23939/memory/",
+      "type": "runtime-memory"
+    }
+  }
+}
