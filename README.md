@@ -43,28 +43,21 @@ AstroRealm/
 │   │
 │   ├── memory/                      # 动态记忆系统
 │   │   ├── persona/                 # 动态人设
-│   │   │   ├── base.md              # 基础人设
-│   │   │   ├── preferences.md       # 用户偏好（动态更新）
-│   │   │   ├── lessons/             # 学到的教训
-│   │   │   └── versions/            # 版本历史
 │   │   ├── collaboration/           # 协作模式库
 │   │   ├── feedback/                # 反馈系统
 │   │   └── config/                  # 配置
 │   │
 │   └── hooks/                       # 自动化脚本
-│       ├── session-start.sh         # 会话启动
-│       ├── session-end.sh           # 会话结束
-│       └── iterate.sh               # 迭代优化
 │
 ├── skills/                          # 🔧 技能库
 │   ├── own/                         # 自己创建的 skills
 │   └── linked/                      # 其他仓库的 skills 链接
 │
 └── docs/                            # 📄 文档
+    ├── history.md                   # 项目历史
     ├── daily-log/                   # 开发日志
     ├── ARCHITECTURE.md              # 架构说明
-    ├── GROWTH.md                    # 成长记录
-    └── INTEGRATION_PLAN.md          # 融合计划
+    └── GROWTH.md                    # 成长记录
 ```
 
 ## 核心组件
@@ -81,25 +74,36 @@ AstroRealm/
 
 ### 2. Skills 技能库
 
-收集和整理的 Claude Code Skills。
-
 ```
 skills/
 ├── own/                 # 自己创建
-│   └── my-skill/
 └── linked/              # 第三方链接
-    └── awesome-skills.md   # 列出其他仓库的好 skills
 ```
 
 ### 3. Docs 文档
 
 开发日志、架构说明、成长记录。
 
+## 快速导航
+
+| 入口 | 说明 |
+|------|------|
+| [CoBrain 知识库](./brain/knowledge/MOC.md) | 知识库索引 |
+| [动态记忆系统](./brain/memory/persona/base.md) | AI 人设定义 |
+| [架构说明](./docs/ARCHITECTURE.md) | 系统架构 |
+| [项目历史](./docs/history.md) | 发展历程 |
+
+## 相关仓库
+
+| 仓库 | 位置 | 用途 |
+|------|------|------|
+| CoBrain | E:/CoBrain | 本地知识库（试错区） |
+| ClaudeStudio | E:/ClaudeStudio | 项目工作区 |
+| AstroRealm | 本仓库 | 稳定版 + GitHub |
+
 ## 使用方式
 
 ### 从 CoBrain 同步
-
-当 CoBrain 中的内容成熟后，复制到 AstroRealm：
 
 ```bash
 # 同步单个文件
@@ -118,17 +122,16 @@ git commit -m "docs: 更新 xxx"
 git push origin main
 ```
 
-## 相关仓库
-
-- **CoBrain** - 本地知识库（E:/CoBrain）
-- **ClaudeStudio** - 项目工作区（E:/ClaudeStudio）
-
 ## 版本历史
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
-| 2026-04-12 | v0.2 | 重构为 brain + skills + docs 结构 |
-| 2026-03-29 | v0.1 | Stable Core 架构（已移除） |
+| 2026-04-12 | v0.2 | 融合重构，brain + skills + docs |
+| 2026-03-29 | v0.1 | Stable Core 架构（已废弃） |
+
+详细历史见 [docs/history.md](./docs/history.md)
 
 ---
-*创建于 2026-03-13* · *最后更新于 2026-04-12*
+
+*创建于 2026-03-13* · *最后更新于 2026-04-12* 
+*本仓库是个人学习和探索的记录，欢迎交流但请勿盲目模仿*
